@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.andrew.silentbackground.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MinecraftClientMixin",
+    "SoundOptionsScreenMixin",
+    "SoundSystemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
