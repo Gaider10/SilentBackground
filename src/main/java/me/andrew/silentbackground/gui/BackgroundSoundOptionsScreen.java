@@ -18,17 +18,17 @@ public class BackgroundSoundOptionsScreen extends GameOptionsScreen {
     @Override
     protected void init() {
         int i = 0;
-        this.addButton(new BackgroundSoundSliderWidget(this.client, this.width / 2 - 155 + i % 2 * 160, this.height / 6 - 12 + 24 * (i >> 1), SoundCategory.MASTER, 310));
+        this.addDrawableChild(new BackgroundSoundSliderWidget(this.client, this.width / 2 - 155 + i % 2 * 160, this.height / 6 - 12 + 24 * (i >> 1), SoundCategory.MASTER, 310));
         i += 2;
 
         for(SoundCategory soundCategory : SoundCategory.values()) {
             if (soundCategory != SoundCategory.MASTER) {
-                this.addButton(new BackgroundSoundSliderWidget(this.client, this.width / 2 - 155 + i % 2 * 160, this.height / 6 - 12 + 24 * (i >> 1), soundCategory, 150));
+                this.addDrawableChild(new BackgroundSoundSliderWidget(this.client, this.width / 2 - 155 + i % 2 * 160, this.height / 6 - 12 + 24 * (i >> 1), soundCategory, 150));
                 i++;
             }
         }
 
-        this.addButton(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 168, 200, 20, ScreenTexts.DONE, (button) -> {
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 168, 200, 20, ScreenTexts.DONE, (button) -> {
             this.client.openScreen(this.parent);
         }));
     }
