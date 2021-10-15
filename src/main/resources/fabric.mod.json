@@ -15,7 +15,7 @@
   "license": "MIT",
   "icon": "assets/silentbackground/icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "main": [
       "me.andrew.silentbackground.SilentBackgroundMod"
