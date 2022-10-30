@@ -2,17 +2,17 @@ package me.andrew.silentbackground.gui;
 
 import me.andrew.silentbackground.gui.widget.BackgroundSoundSliderWidget;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.ScreenTexts;
+import net.minecraft.screen.ScreenTexts;
 import net.minecraft.client.gui.screen.option.GameOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 
 public class BackgroundSoundOptionsScreen extends GameOptionsScreen {
     public BackgroundSoundOptionsScreen(Screen parent, GameOptions gameOptions) {
-        super(parent, gameOptions, new TranslatableText("options.backgroundSounds.title"));
+        super(parent, gameOptions, Text.translatable("options.backgroundSounds.title"));
     }
 
     @Override
@@ -29,7 +29,7 @@ public class BackgroundSoundOptionsScreen extends GameOptionsScreen {
         }
 
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 168, 200, 20, ScreenTexts.DONE, (button) -> {
-            this.client.openScreen(this.parent);
+            this.client.setScreen(this.parent);
         }));
     }
 
